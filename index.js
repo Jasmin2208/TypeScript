@@ -1,10 +1,5 @@
 "use strict";
-let firstName = "Jasmin";
-let lastName = "Korat";
-let myAge = 21;
-let fullName = firstName + " " + lastName + " " + myAge;
-console.log("FullName---------->", fullName);
-console.log("Type Of Fullname-->", typeof fullName);
-console.log("length------------>", fullName.length);
-console.log("UPPERCASE--------->", fullName.toUpperCase());
-console.log("lowercase--------->", fullName.toLowerCase());
+function isEven(a) {
+    return a % 2 === 0;
+}
+console.log(isEven(5));
