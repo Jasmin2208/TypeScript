@@ -1,7 +1,5 @@
-console.log("-----------Hello World------------")
+const sum = (a: number, b: number) => {
+    return console.log(a + b)
+}
 
-let a = 50;
-
-// a = "jasmin"
-
-a = 90;
+sum(10, 5)

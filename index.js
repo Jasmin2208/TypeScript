@@ -1,4 +1,4 @@
-console.log("-----------Hello World------------");
-var a = 50;
-// a = "jasmin"
-a = 90;
+var sum = function (a, b) {
+    return console.log(a + b);
+};
+sum(10, 5);
