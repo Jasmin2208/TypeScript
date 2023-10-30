@@ -1,10 +1,10 @@
 "use strict";
+let firstName = "Jasmin";
+let lastName = "Korat";
 let myAge = 21;
-let pi = 3.14;
-let a = 1;
-// let b:number = a + "jasmin" //ERROR
-// console.log("b------------->",b)
-// let b:number = a  
-// console.log("b------------->",b)
-let b = a + pi;
-console.log("b------------->", b);
+let fullName = firstName + " " + lastName + " " + myAge;
+console.log("FullName---------->", fullName);
+console.log("Type Of Fullname-->", typeof fullName);
+console.log("length------------>", fullName.length);
+console.log("UPPERCASE--------->", fullName.toUpperCase());
+console.log("lowercase--------->", fullName.toLowerCase());
