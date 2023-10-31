@@ -1,20 +1,18 @@
+const array1: number[] = [1, 2, 3, 4, 5];
+console.log("array1------------>", array1)
 
-// set default value in parameter
-function greet1(name: string, id: number = 1): string {
-    return `Welcome, ${name} your id is ${id}.`
-}
+const array2: string[] = ["jasmin", "happy", "yash"]
+console.log("array2------------>", array2)
 
-const greetFunction1 = greet1("jasmin")
-console.log(greetFunction1)
+const array3: (string | number | boolean)[] = [1, "jasmin", true, "yash", 2]
+console.log("array3------------>", array3)
 
-//set optional value in parameter
-function greet2(name: string, id?: number): string {
-    if (id) {
-        return `Welcome, ${name} your id is ${id}.`
-    } else {
-        return `Welcome, ${name}.`
-    }
-}
+const array4: any[] = [1, "jasmin", true, "yash", 2]
+console.log("array4------------>", array4)
 
-const greetFunction2 = greet2("jasmin")
-console.log(greetFunction2)
+const array5: number[] = []
+array5.push(1)
+array5.push(3)
+array5.push(5)
+array5.push(7)
+console.log("array5------------>", array5)

@@ -1,18 +1,15 @@
 "use strict";
-// set default value in parameter
-function greet1(name, id = 1) {
-    return `Welcome, ${name} your id is ${id}.`;
-}
-const greetFunction1 = greet1("jasmin");
-console.log(greetFunction1);
-//set optional value in parameter
-function greet2(name, id) {
-    if (id) {
-        return `Welcome, ${name} your id is ${id}.`;
-    }
-    else {
-        return `Welcome, ${name}.`;
-    }
-}
-const greetFunction2 = greet2("jasmin");
-console.log(greetFunction2);
+const array1 = [1, 2, 3, 4, 5];
+console.log("array1------------>", array1);
+const array2 = ["jasmin", "happy", "yash"];
+console.log("array2------------>", array2);
+const array3 = [1, "jasmin", true, "yash", 2];
+console.log("array3------------>", array3);
+const array4 = [1, "jasmin", true, "yash", 2];
+console.log("array4------------>", array4);
+const array5 = [];
+array5.push(1);
+array5.push(3);
+array5.push(5);
+array5.push(7);
+console.log("array5------------>", array5);
