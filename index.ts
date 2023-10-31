@@ -1,14 +1,20 @@
-function greet(name: string, id: number): string {
+
+// set default value in parameter
+function greet1(name: string, id: number = 1): string {
     return `Welcome, ${name} your id is ${id}.`
 }
 
-const greetFunction = greet("jasmin", 22)
-console.log(greetFunction)
+const greetFunction1 = greet1("jasmin")
+console.log(greetFunction1)
 
-const isPalindrom = (palindrom: string): boolean => {
-    const myPalindrom = palindrom.split("").reverse().join("")
-    return palindrom === myPalindrom
+//set optional value in parameter
+function greet2(name: string, id?: number): string {
+    if (id) {
+        return `Welcome, ${name} your id is ${id}.`
+    } else {
+        return `Welcome, ${name}.`
+    }
 }
 
-const palindrom = isPalindrom("12321")
-console.log(palindrom)
+const greetFunction2 = greet2("jasmin")
+console.log(greetFunction2)
