@@ -1,20 +1,12 @@
 "use strict";
-let a = 5;
-a = "jasmin";
-console.log("a---->", a);
-let b;
-b = 5;
-// b = "jasmin"
-// b = true
-if (typeof b === 'number') {
-    console.log("Number----------->", b);
+function greet(name, id) {
+    return `Welcome, ${name} your id is ${id}.`;
 }
-else if (typeof b === 'string') {
-    console.log("String----------->", b);
-}
-else if (typeof b === 'boolean') {
-    console.log("Boolean----------->", b);
-}
-else {
-    console.log("B----------------->", b);
-}
+const greetFunction = greet("jasmin", 22);
+console.log(greetFunction);
+const isPalindrom = (palindrom) => {
+    const myPalindrom = palindrom.split("").reverse().join("");
+    return palindrom === myPalindrom;
+};
+const palindrom = isPalindrom("12321");
+console.log(palindrom);
