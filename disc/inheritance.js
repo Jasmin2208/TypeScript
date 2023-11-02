@@ -16,7 +16,7 @@ class Student extends Persons {
         this.grade = grade;
     }
     introduce() {
-        return `Hi, I am ${this.name} and I am ${this.age} old.I am in grade ${this.grade}. I love ${this.hobbies.join(", ")}`;
+        return `Hi, I am ${this.name} and I am ${this.age} old.I am in grade ${this.grade}.`;
     }
 }
 const persons1 = new Persons("jasmin", 21, ["chess", "travelling"]);

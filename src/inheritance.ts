@@ -1,13 +1,5 @@
 class Persons {
-    public name: string;
-    protected age: number;
-    private hobbies: string[];
-
-    constructor(name: string, age: number, hobbies: string[]) {
-        this.name = name;
-        this.age = age;
-        this.hobbies = hobbies
-    }
+    constructor(public name: string, protected age: number, private hobbies: string[]) { }
 
     introduce(): string {
         return `Hi, I am ${this.name} and I am ${this.age} old. I love ${this.hobbies.join(", ")}`
@@ -16,15 +8,13 @@ class Persons {
 
 //This is inheritance
 class Student extends Persons {
-    grade: number;
 
-    constructor(name: string, age: number, hobbies: string[], grade: number) {
+    constructor(name: string, age: number, hobbies: string[], public grade: number) {
         super(name, age, hobbies); //super() is used for get parent class property inherit.
-        this.grade = grade;
     }
 
     introduce(): string {
-        return `Hi, I am ${this.name} and I am ${this.age} old.I am in grade ${this.grade}. I love ${this.hobbies.join(", ")}`
+        return `Hi, I am ${this.name} and I am ${this.age} old.I am in grade ${this.grade}.`
     }
 }
 
@@ -34,5 +24,5 @@ const persons3: Persons = new Persons("vraj", 16, ["chess", "travelling"])
 
 const student1: Student = new Student("vraj", 16, ["chess", "travelling"], 1)
 
-console.log(persons1)
+console.log(persons1.name)
 console.log(student1.introduce())
