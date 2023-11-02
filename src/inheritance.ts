@@ -1,7 +1,7 @@
 class Persons {
-    name: string;
-    age: number;
-    hobbies: string[];
+    public name: string;
+    protected age: number;
+    private hobbies: string[];
 
     constructor(name: string, age: number, hobbies: string[]) {
         this.name = name;
@@ -34,5 +34,5 @@ const persons3: Persons = new Persons("vraj", 16, ["chess", "travelling"])
 
 const student1: Student = new Student("vraj", 16, ["chess", "travelling"], 1)
 
-// console.log(person1, person2, person3)
+console.log(persons1)
 console.log(student1.introduce())

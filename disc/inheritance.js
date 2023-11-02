@@ -23,5 +23,5 @@ const persons1 = new Persons("jasmin", 21, ["chess", "travelling"]);
 const persons2 = new Persons("happy", 23, ["chess", "travelling"]);
 const persons3 = new Persons("vraj", 16, ["chess", "travelling"]);
 const student1 = new Student("vraj", 16, ["chess", "travelling"], 1);
-// console.log(person1, person2, person3)
+console.log(persons1.name);
 console.log(student1.introduce());
