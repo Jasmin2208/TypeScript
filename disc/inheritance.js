@@ -1,27 +1,32 @@
 "use strict";
 class Persons {
-    constructor(name, age, hobbies) {
+    constructor(name, hobbies) {
+        // if (age > 120 || age < 0) {
+        //     throw new Error("Age is not valid!");
         this.name = name;
-        this.age = age;
         this.hobbies = hobbies;
+        // }
+    }
+    set age(age) {
+        if (age > 120 || age < 0) {
+            throw new Error("Age is not valid!");
+        }
+        this._age = age;
+    }
+    get age() {
+        if (this._age === undefined) {
+            throw new Error("Age is not defined!");
+        }
+        return this._age;
     }
     introduce() {
-        return `Hi, I am ${this.name} and I am ${this.age} old. I love ${this.hobbies.join(", ")}`;
+        return `Hi, I am ${this.name} and I am ${this._age} old. I love ${this.hobbies.join(", ")}`;
     }
 }
-//This is inheritance
-class Student extends Persons {
-    constructor(name, age, hobbies, grade) {
-        super(name, age, hobbies); //super() is used for get parent class property inherit.
-        this.grade = grade;
-    }
-    introduce() {
-        return `Hi, I am ${this.name} and I am ${this.age} old.I am in grade ${this.grade}.`;
-    }
-}
-const persons1 = new Persons("jasmin", 21, ["chess", "travelling"]);
-const persons2 = new Persons("happy", 23, ["chess", "travelling"]);
-const persons3 = new Persons("vraj", 16, ["chess", "travelling"]);
-const student1 = new Student("vraj", 16, ["chess", "travelling"], 1);
-console.log(persons1.name);
-console.log(student1.introduce());
+const persons1 = new Persons("jasmin", ["chess", "travelling"]);
+const persons2 = new Persons("happy", ["chess", "travelling"]);
+const persons3 = new Persons("vraj", ["chess", "travelling"]);
+persons1.age = 12;
+console.log(persons1);
+console.log(persons1.age);
+console.log(persons1.introduce());

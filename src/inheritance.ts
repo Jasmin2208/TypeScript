@@ -1,28 +1,38 @@
 class Persons {
-    constructor(public name: string, protected age: number, private hobbies: string[]) { }
+    private _age: number | undefined;
+    constructor(public name: string, public hobbies: string[]) {
+        // if (age > 120 || age < 0) {
+        //     throw new Error("Age is not valid!");
+
+        // }
+    }
+
+    public set age(age: number) {
+        if (age > 120 || age < 0) {
+            throw new Error("Age is not valid!");
+        }
+        this._age = age
+    }
+
+    public get age(){
+        if(this._age === undefined){
+            throw new Error("Age is not defined!");
+        }
+        return this._age
+    }
 
     introduce(): string {
-        return `Hi, I am ${this.name} and I am ${this.age} old. I love ${this.hobbies.join(", ")}`
+        return `Hi, I am ${this.name} and I am ${this._age} old. I love ${this.hobbies.join(", ")}`
     }
 }
 
-//This is inheritance
-class Student extends Persons {
 
-    constructor(name: string, age: number, hobbies: string[], public grade: number) {
-        super(name, age, hobbies); //super() is used for get parent class property inherit.
-    }
+const persons1: Persons = new Persons("jasmin", ["chess", "travelling"])
+const persons2: Persons = new Persons("happy", ["chess", "travelling"])
+const persons3: Persons = new Persons("vraj", ["chess", "travelling"])
 
-    introduce(): string {
-        return `Hi, I am ${this.name} and I am ${this.age} old.I am in grade ${this.grade}.`
-    }
-}
+persons1.age = 12
 
-const persons1: Persons = new Persons("jasmin", 21, ["chess", "travelling"])
-const persons2: Persons = new Persons("happy", 23, ["chess", "travelling"])
-const persons3: Persons = new Persons("vraj", 16, ["chess", "travelling"])
-
-const student1: Student = new Student("vraj", 16, ["chess", "travelling"], 1)
-
-console.log(persons1.name)
-console.log(student1.introduce())
+console.log(persons1)
+console.log(persons1.age);
+console.log(persons1.introduce())
